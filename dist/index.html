@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./Assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./Assets/favicon/site.webmanifest">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Visual Studio Code - Code Editing. Redefined</title>
+</head>
+<body class="font-segoe-ui box-border">
+    <!-- Main Container -->
+    <div>
+        <!-- Nav bar starts here -->
+        <nav class="fixed w-full h-50px mx-auto bg-very-dark-gray shadow-1px z-2">
+            <!-- Inner container -->
+            <div class="w-full h-full mx-auto flex justify-between items-center text-white 3xl:max-w-screen-3xl">
+
+                <div class="flex items-center justify-center ml-15px lg:ml-42px xl:ml-[50px] 2xl:ml-150px 3xl:ml-190px">
+                    <div class="flex justify-center items-center mr-30px hover:cursor-pointer">
+                        <img src="./Assets/vs-code-logo.png" alt="visual-studio-code-logo" class="w-24px mt-1px mr-12px">
+                        <p class="text-20px">Visual Studio Code</p>
+                    </div>
+                    <div class="hidden lg:block">
+                        <ul class="flex justify-center itmes-center text-16px font-medium text-light-gray-txt mt-5px">
+                            <li class="pr-12px transiton-all duration-75 ease-in-out hover:cursor-pointer hover:text-white">Docs</li>
+                            <li class="px-12px transiton-all duration-75 ease-in-out hover:cursor-pointer hover:text-white">Updates</li>
+                            <li class="px-12px transiton-all duration-75 ease-in-out hover:cursor-pointer hover:text-white">BLog</li>
+                            <li class="px-12px transiton-all duration-75 ease-in-out hover:cursor-pointer hover:text-white">API</li>
+                            <li class="px-12px transiton-all duration-75 ease-in-out hover:cursor-pointer hover:text-white">Extensions</li>
+                            <li class="px-12px transiton-all duration-75 ease-in-out hover:cursor-pointer hover:text-white">FAQ</li>
+                            <li class="pl-12px transiton-all duration-75 ease-in-out hover:cursor-pointer hover:text-white">Learn</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center mr-25px lg:mr-27px xl:mr-50px 2xl:mr-135px 3xl:mr-190px">
+                    <div class="hidden lg:block">
+                        <div class="flex justify-center items-center text-16px">
+                            <div class="xl:hidden">
+                                <img src="./Assets/search-icon.svg" alt="search-icon" class="w-16px mr-15px cursor-pointer">
+                            </div>
+                            <div class="relative hidden xl:block">
+                                <img src="./Assets/search-icon.svg" alt="search-icon" class="absolute top-17px left-13px w-16px cursor-pointer">
+                                <input type="text" name="search" id="search-bar" placeholder="Search Docs" class="w-183px h-49px text-14px bg-gray-vs pl-40px pr-15px placeholder:text-gray-300 outline outline-1 outline-gray-vs transiton-all duration-75 ease-in-out hover:outline-gray-500 hover:bg-gray-hvr-vs focus:outline-gray-200">
+                            </div>
+                            <div>
+                                <button type="button" class="flex justify-center items-center w-134px h-50px pr-3px font-medium bg-blue-vs cursor-pointer transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs"><img src="./Assets/download-icon-2.svg" alt="download-icon" class="w-16px mr-9px">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center mt-1px cursor-pointer lg:hidden">
+                        <i class="fa-solid fa-bars text-22px"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Nav bar ends here -->
+
+        <!-- Header starts here -->
+        <header class="w-full h-auto mx-auto pt-50px text-white bg-very-dark-gray">
+            <!-- Section 1 -->
+            <section class="w-full h-auto mx-auto py-11px bg-dark-gray">
+                <!-- Container -->
+                <div class="text-center px-48px mx-auto 3xl:max-w-screen-3xl">
+                    <p class="text-gray-300 text-16px font-normal">This project is for Educational Purposes Only. It has no Commercial Use.</p>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="w-full h-auto mx-auto 3xl:max-w-screen-3xl">
+                <!-- Container -->
+                <div class="w-full h-auto mx-auto flex flex-col items-center pt-20px pb-5px gap-20px md:pb-100px lg:flex-row lg:justify-center lg:items-start lg:gap-30px lg:pt-30px lg:pb-60px xl:pb-30px">
+                    <!-- Left side -->
+                    <div class="text-center mx-auto w-345px lg:w-294px lg:mx-0 xl:w-360px">
+                        <h1 class="text-42.5px leading-46.75px font-thin md:text-45px md:leading-49.5px lg:text-47.5px lg:leading-52.25px lg:mt-35px xl:text-50px xl:leading-55px">Code editing. <strong>Redefined.</strong></h1>
+                        <p class="text-15.3px leading-21.42px font-normal text-light-gray-txt mt-10px md:text-16.2px md:leading-22.68px lg:text-17.1px lg:leading-23.94px xl:text-18px xl:leading-25.2px">Free. Built on open source. Runs everywhere.</p>
+                        <div class="flex justify-center mt-21.250px md:mt-22.5px lg:mt-23.750px xl:mt-25px">
+                            <button type="button" class="flex flex-col justify-center items-center text-15.3px leading-21.85px font-semibold w-248px h-55.25px mr-2px cursor-pointer bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs md:text-16.2px md:leading-23.14px md:h-58.5px lg:w-218.15px lg:h-61.75px lg:text-17.1px lg:leading-24.42px xl:w-232px xl:h-65px xl:text-18px xl:leading-25.7px">
+                                Download for Windows
+                                <span class="text-11.9px leading-17px font-light lg:text-13.3px lg:leading-19px xl:text-14.3px xl:leading-20px">
+                                    Stable Build
+                                </span>
+                            </button>
+                            <button type="button" class="flex justify-center items-center w-43px h-55.25px cursor-pointer bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs md:h-58.5px lg:h-61.75px xl:h-65px"><img src="./Assets/down-arrow.svg" alt="down-arrow" class="w-16px"></button>
+                        </div>
+                        <div class="relative">
+                            <div class="bg-dark-gray w-16.83px h-16.83px rotate-45 absolute -top-4px right-36px md:-top-5px md:right-38px lg:-top-6px lg:right-28px xl:-top-7px xl:right-55px"></div>
+                            <div class="bg-dark-gray w-293px mt-12.750px p-8px mx-auto rounded-8px md:mt-13.5px lg:w-263.15px lg:mt-14.25px xl:w-277px xl:mt-15px">
+                                <p class="text-11.9px leading-17px font-light text-gray-300 md:text-12.6px md:leading-18px lg:text-13.3px lg:leading-19px xl:text-14.3px xl:leading-20px">
+                                    <a href="#" target="_blank" class="text-blue-txt hover:underline">Web</a>,
+                                    <a href="#" target="_blank" class="text-blue-txt hover:underline">Insiders edition</a>, or
+                                    <a href="#" target="_blank" class="text-blue-txt hover:underline">other platforms</a>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="w-200px mx-auto text-11.9px leading-17px font-light text-gray-300 mt-13px lg:mt-13.5px lg:text-12px xl:mt-14px">By using VS Code, you agree to its <a href="#" target="_blank" class="text-blue-txt hover:underline">license and privacy statement</a>.</p>
+                    </div>
+                    <!-- Right side -->
+                    <div class="w-full mx-auto lg:w-617px lg:mx-0 xl:w-750px">
+                        <div class="flex justify-center px-15px lg:px-0">
+                            <img src="./Assets/header-image.png" alt="Visual-Studio-Code" class="md:w-617px xl:w-750px">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <!-- Header ends here -->
+        
+        <!-- Main starts here -->
+        <main class="w-full h-auto mx-auto">
+            <!-- Section 3 -->
+            <section class="w-full h-auto mx-auto bg-white">
+                <!-- Container -->
+                <div class="w-full h-auto mx-auto flex flex-wrap justify-center 3xl:max-w-screen-3xl">
+                    <!-- IntelliSense -->
+                    <div class="w-1/2 h-109.275px flex justify-center px-15px md:w-3/12 md:h-115.713px lg:w-242.5px lg:h-122.137px xl:w-292.5px xl:h-128.562px">
+                        <div class="w-full h-full flex flex-col justify-center items-center text-gray-txt cursor-pointer transiton-all duration-75 ease-in-out hover:bg-white-hvr hover:text-intellisense-blue">
+                            <i class="fa-solid fa-lightbulb text-45px md:text-48px lg:text-50px xl:text-52px"></i>
+                            <p class="text-17px text-black font-normal mt-8.5px md:text-18px md:mt-9px lg:text-19px lg:mt-9.5px xl:text-20px xl:mt-10px">IntelliSense</p>
+                        </div>
+                    </div>
+                    <!-- Run and Debug -->
+                    <div class="w-1/2 h-109.275px flex justify-center px-15px md:w-3/12 md:h-115.713px lg:w-242.5px lg:h-122.137px xl:w-292.5px xl:h-128.562px">
+                        <div class="w-full h-full flex flex-col justify-center items-center text-gray-txt cursor-pointer transiton-all duration-75 ease-in-out hover:bg-white-hvr hover:text-run-debug-green">
+                            <i class="fa-solid fa-bug text-45px md:text-48px lg:text-50px xl:text-52px"></i>
+                            <p class="text-17px text-black font-normal mt-8.5px md:text-18px md:mt-9px lg:text-19px lg:mt-9.5px xl:text-20px xl:mt-10px">Rund and Debug</p>
+                        </div>
+                    </div>
+                    <!-- Built-in Git -->
+                    <div class="w-1/2 h-109.275px flex justify-center px-15px md:w-3/12 md:h-115.713px lg:w-242.5px lg:h-122.137px xl:w-292.5px xl:h-128.562px">
+                        <div class="w-full h-full flex flex-col justify-center items-center text-gray-txt cursor-pointer transiton-all duration-75 ease-in-out hover:bg-white-hvr hover:text-built-in-git-red">
+                            <i class="fa-solid fa-code-branch text-45px md:text-48px lg:text-50px xl:text-52px"></i>
+                            <p class="text-17px text-black font-normal mt-8.5px md:text-18px md:mt-9px lg:text-19px lg:mt-9.5px xl:text-20px xl:mt-10px">Built-in Git</p>
+                        </div>
+                    </div>
+                    <!-- Extensions -->
+                    <div class="w-1/2 h-109.275px flex justify-center px-15px md:w-3/12 md:h-115.713px lg:w-242.5px lg:h-122.137px xl:w-292.5px xl:h-128.562px">
+                        <div class="w-full h-full flex flex-col justify-center items-center text-gray-txt cursor-pointer transiton-all duration-75 ease-in-out hover:bg-white-hvr hover:text-black">
+                            <i class="fa-solid fa-puzzle-piece text-45px md:text-48px lg:text-50px xl:text-52px"></i>
+                            <p class="text-17px text-black font-normal mt-8.5px md:text-18px md:mt-9px lg:text-19px lg:mt-9.5px xl:text-20px xl:mt-10px">Extensions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="w-full h-auto mx-auto bg-off-white-bg">
+                <!-- Container -->
+                <div class="w-full h-auto mx-auto flex items-center justify-center pt-83px pb-68px px-51px md:pt-87px md:pb-72px md:px-39px lg:pt-91px lg:pb-76px lg:px-0 xl:pt-95px xl:pb-80px 3xl:max-w-screen-3xl">
+                    <!-- Left arrow -->
+                    <div class="flex cursor-pointer">
+                        <i class="fa-solid fa-chevron-left text-20px text-gray-chevron hover:text-gray-chevron-hvr md:text-30px"></i>
+                    </div>
+                    <!-- Tweets -->
+                    <div class="flex flex-col items-center lg:flex-row lg:justify-center">
+                        <!-- Tweet 1 -->
+                        <div class="flex items-start gap-8px mx-13px mb-17px md:mx-22px md:mb-18px md:gap-9px lg:w-276.2px lg:h-203.735px lg:mx-16px lg:mb-0 lg:gap-9.5px xl:w-342.525px xl:h-171.850px xl:mx-15px xl:gap-10px">
+                            <img src="./Assets/tweet_1.jpeg" alt="Una-Kravets" class="w-61.2px rounded-full shadow-2px cursor-pointer md:w-64.8px lg:w-68.4px xl:w-72px">
+                            <div>
+                                <div class="mt-5px relative xl:flex xl:items-center">
+                                    <strong class="text-11.9px font-bold cursor-pointer transiton-all duration-75 ease-in-out hover:text-blue-txt-2 md:text-12.6px lg:text-13.3px xl:text-14px">Una Kravets</strong>
+                                    <p class="text-10.2px font-normal text-gray-600 cursor-pointer md:text-10.8px lg:text-11.4px xl:text-12px xl:pl-5px">@Una</p>
+                                    <i class="fa-brands fa-twitter text-14px text-gray-twitter absolute top-0 right-0 md:text-15px md:top-3px lg:text-16px lg:top-4px xl:top-2px"></i>
+                                </div>
+                                <p class="text-15.3px leading-20.4px font-normal md:text-16.2px md:leading-21.6px lg:text-16.8px lg:leading-22.6px xl:text-18px xl:leading-24px">VS <a href="#" target="_blank" class="text-blue-txt-2 hover:underline underline-offset-1.5px">@code</a> does so many things right. I'm constantly impressed by the UX, and customizing workspace / user preferences is no exception. 🙌🏼💯 It just keeps getting better ❤️</p>
+                            </div>
+                        </div>
+                        <!-- Tweet 2 -->
+                        <div class="flex items-start gap-8px mx-13px mb-17px md:mx-22px md:mb-18px md:gap-9px lg:w-276.2px lg:h-203.735px lg:mx-16px lg:mb-0 lg:gap-9.5px xl:w-342.525px xl:h-171.850px xl:mx-15px xl:gap-10px">
+                            <img src="./Assets/tweet_2.jpeg" alt="Jonathan-Dunlap" class="w-61.2px rounded-full shadow-2px cursor-pointer md:w-64.8px lg:w-68.4px xl:w-72px">
+                            <div>
+                                <div class="mt-5px relative xl:flex xl:items-center">
+                                    <strong class="text-11.9px font-bold cursor-pointer transiton-all duration-75 ease-in-out hover:text-blue-txt-2 md:text-12.6px lg:text-13.3px xl:text-14px">Jonathan Dunlap</strong>
+                                    <p class="text-10.2px font-normal text-gray-600 cursor-pointer md:text-10.8px lg:text-11.4px xl:text-12px xl:pl-5px">@jadbox</p>
+                                    <i class="fa-brands fa-twitter text-14px text-gray-twitter absolute top-0 right-0 md:text-15px md:top-3px lg:text-16px lg:top-4px xl:top-2px"></i>
+                                </div>
+                                <p class="text-15.3px leading-20.4px font-normal md:text-16.2px md:leading-21.6px lg:text-16.8px lg:leading-22.6px xl:text-18px xl:leading-24px">VS Code will have deep remote development. You can connect to a container running a different OS and use any VS Code plugins, linting, debugging for that environment. 🔥🔥🔥</p>
+                            </div>
+                        </div>
+                        <!-- Tweet 3 -->
+                        <div class="flex items-start gap-8px mx-13px md:mx-22px md:gap-9px lg:w-276.2px lg:h-203.735px lg:mx-16px lg:gap-9.5px xl:w-342.525px xl:h-171.850px xl:mx-15px xl:gap-10px">
+                            <img src="./Assets/tweet_3.jpeg" alt="Pavithra Kodmad" class="w-61.2px rounded-full shadow-2px cursor-pointer md:w-64.8px lg:w-68.4px xl:w-72px">
+                            <div>
+                                <div class="mt-5px relative xl:flex xl:items-center">
+                                    <strong class="text-11.9px font-bold cursor-pointer transiton-all duration-75 ease-in-out hover:text-blue-txt-2 md:text-12.6px lg:text-13.3px xl:text-14px">Pavithra Kodmad</strong>
+                                    <p class="text-10.2px font-normal text-gray-600 cursor-pointer md:text-10.8px lg:text-11.4px xl:text-12px xl:pl-5px">@PKodmad</p>
+                                    <i class="fa-brands fa-twitter text-14px text-gray-twitter absolute top-0 right-0 md:text-15px md:top-3px lg:text-16px lg:top-4px xl:top-2px"></i>
+                                </div>
+                                <p class="text-15.3px leading-20.4px font-normal md:text-16.2px md:leading-21.6px lg:text-16.8px lg:leading-22.6px xl:text-18px xl:leading-24px">VS Code is my most used and favorite editor. I love being able to customize the editor - changing the layout, the icons, fonts and color scheme is so easy!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Left arrow -->
+                    <div class="flex cursor-pointer">
+                        <i class="fa-solid fa-chevron-right text-20px text-gray-chevron hover:text-gray-chevron-hvr md:text-30px"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="w-full h-auto mx-auto">
+                <!-- Container -->
+                <div class="w-full h-auto mx-auto flex flex-col items-center pt-51px pb-61px gap-20px md:flex-row md:items-start md:justify-between md:pt-74px md:pb-64px md:gap-0 lg:pt-77px lg:pb-57px lg:w-970px xl:pt-80px xl:pb-60px xl:w-1170px 3xl:max-w-screen-3xl">
+                    <!-- Left side -->
+                    <div class="w-full mx-auto md:w-1/3 md:mx-0 md:mt-8px">
+                        <div class="flex justify-center px-15px">
+                            <img src="./Assets/meet-intellisense.svg" alt="Meet-IntelliSense" class="w-3/5 md:w-full">
+                        </div>
+                    </div>
+                    <!-- Right side -->
+                    <div class="w-full mx-auto px-15px md:w-7/12 md:mx-0">
+                        <h2 class="text-18.7px leading-20.57px font-extralight md:text-27px md:leading-29.7px lg:text-28.5px lg:leading-31.35px xl:text-30px xl:leading-33px">Meet IntelliSense.</h2>
+                        <p class="text-15.3px leading-34px font-normal mt-29.750px md:text-16.2px md:leading-36px md:mt-31.5px lg:text-17.1px lg:leading-38px lg:mt-33.250px xl:text-18px xl:leading-40px xl:mt-35px">Go beyond syntax highlighting and autocomplete with IntelliSense, which provides smart completions based on variable types, function definitions, and imported modules.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6 -->
+            <section class="w-full h-auto mx-auto bg-off-white-bg">
+                <!-- Container -->
+                <div class="w-full h-auto mx-auto flex flex-col items-center pt-51px pb-61px gap-20px md:flex-row-reverse md:items-start md:justify-between md:pt-74px md:pb-64px md:gap-0 lg:pt-77px lg:pb-67px lg:w-970px xl:pt-80px xl:pb-60px xl:w-1170px 3xl:max-w-screen-3xl">
+                    <!-- Left side -->
+                    <div class="w-full mx-auto md:w-1/3 md:mx-0 md:mt-8px">
+                        <div class="flex justify-center px-15px">
+                            <img src="./Assets/debug-code.svg" alt="Debug-Code" class="w-3/5 md:w-full">
+                        </div>
+                    </div>
+                    <!-- Right side -->
+                    <div class="w-full mx-auto px-15px md:w-7/12 md:mx-0">
+                        <h2 class="text-18.7px leading-20.57px font-extralight md:text-27px md:leading-29.7px lg:text-28.5px lg:leading-31.35px xl:text-30px xl:leading-33px">Print statement debugging is a thing of the past.</h2>
+                        <p class="text-15.3px leading-34px font-normal mt-29.750px md:text-16.2px md:leading-36px md:mt-31.5px lg:text-17.1px lg:leading-38px lg:mt-33.250px xl:text-18px xl:leading-40px xl:mt-35px">Debug code right from the editor. Launch or attach to your running apps and debug with break points, call stacks, and an interactive console.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 7 -->
+            <section class="w-full h-auto mx-auto">
+                <!-- Container -->
+                <div class="w-full h-auto mx-auto flex flex-col items-center pt-51px pb-61px gap-20px md:flex-row md:items-start md:justify-between md:pt-74px md:pb-64px md:gap-0 lg:pt-77px lg:pb-57px lg:w-970px xl:pt-80px xl:pb-60px xl:w-1170px 3xl:max-w-screen-3xl">
+                    <!-- Left side -->
+                    <div class="w-full mx-auto md:w-1/3 md:mx-0 md:mt-8px">
+                        <div class="flex justify-center px-15px">
+                            <img src="./Assets/git-built-in.svg" alt="Git-Built-in" class="w-3/5 md:w-full">
+                        </div>
+                    </div>
+                    <!-- Right side -->
+                    <div class="w-full mx-auto px-15px md:w-7/12 md:mx-0">
+                        <h2 class="text-18.7px leading-20.57px font-extralight md:text-27px md:leading-29.7px lg:text-28.5px lg:leading-31.35px xl:text-30px xl:leading-33px">Git commands built-in.</h2>
+                        <p class="text-15.3px leading-34px font-normal mt-29.750px md:text-16.2px md:leading-36px md:mt-31.5px lg:text-17.1px lg:leading-38px lg:mt-33.250px xl:text-18px xl:leading-40px xl:mt-35px">Working with Git and other SCM providers has never been easier. Review diffs, stage files, and make commits right from the editor. Push and pull from any hosted SCM service.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8 -->
+            <section class="w-full h-auto mx-auto bg-off-white-bg">
+                <!-- Container -->
+                <div class="w-full h-auto mx-auto flex flex-col items-center pt-51px pb-61px gap-20px md:flex-row-reverse md:items-start md:justify-between md:pt-54px md:pb-64px md:gap-0 lg:pt-57px lg:pb-67px lg:w-970px xl:pt-60px xl:pb-70px xl:w-1170px 3xl:max-w-screen-3xl">
+                    <!-- Left side -->
+                    <div class="w-full mx-auto md:w-1/3 md:mx-0">
+                        <div class="flex justify-center px-15px">
+                            <img src="./Assets/multiple-logos.png" alt="Features-and-Extensions" class="w-3/5 cursor-pointer transiton-all duration-600 ease-out hover:scale-106 md:w-full">
+                        </div>
+                    </div>
+                    <!-- Right side -->
+                    <div class="w-full mx-auto px-15px md:w-7/12 md:mx-0 md:mt-20px">
+                        <h2 class="text-18.7px leading-20.57px font-extralight md:text-27px md:leading-29.7px lg:text-28.5px lg:leading-31.35px xl:text-30px xl:leading-33px">Extensible and customizable.</h2>
+                        <p class="text-15.3px leading-34px font-normal mt-29.750px md:text-16.2px md:leading-36px md:mt-31.5px lg:text-17.1px lg:leading-38px lg:mt-33.250px xl:text-18px xl:leading-40px xl:mt-35px">Want even more features? Install extensions to add new languages, themes, debuggers, and to connect to additional services. Extensions run in separate processes, ensuring they won't slow down your editor. <a href="#" target="_blank" class="text-blue-txt-2 hover:underline underline-offset-1.5px">Learn more about extensions</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 9 -->
+            <section class="w-full h-auto mx-auto">
+                <!-- Container -->
+                <div class="w-full h-auto mx-auto flex flex-col items-center pt-51px pb-61px gap-20px md:flex-row md:items-start md:justify-between md:pt-74px md:pb-64px md:gap-0 lg:pt-77px lg:pb-67px lg:w-970px xl:pt-80px xl:pb-60px xl:w-1170px 3xl:max-w-screen-3xl">
+                    <!-- Left side -->
+                    <div class="w-full mx-auto md:w-1/3 md:mx-0 md:mt-8px">
+                        <div class="flex justify-center px-15px">
+                            <img src="./Assets/microsoft-azure.svg" alt="Microsoft-Azure" class="w-3/5 md:w-full">
+                        </div>
+                    </div>
+                    <!-- Right side -->
+                    <div class="w-full mx-auto px-15px md:w-7/12 md:mx-0">
+                        <h2 class="text-18.7px leading-20.57px font-extralight md:text-27px md:leading-29.7px lg:text-28.5px lg:leading-31.35px xl:text-30px xl:leading-33px">Deploy with confidence and ease.</h2>
+                        <p class="text-15.3px leading-34px font-normal mt-29.750px md:text-16.2px md:leading-36px md:mt-31.5px lg:text-17.1px lg:leading-38px lg:mt-33.250px xl:text-18px xl:leading-40px xl:mt-35px">With <a href="#" target="_blank" class="text-blue-txt-2 hover:underline underline-offset-1.5px">Microsoft Azure</a> you can deploy and host your React, Angular, Vue, Node, Python (and more!) sites, store and query relational and document based data, and scale with serverless computing, all with ease, <a href="#" target="_blank" class="text-blue-txt-2 hover:underline underline-offset-1.5px">all from within VS Code</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 10 -->
+            <section class="w-full h-auto mx-auto bg-off-white-bg">
+                <!-- Container -->
+                <div class="w-full h-auto mx-auto flex flex-col items-center pt-60px pb-80px md:pt-80px 3xl:max-w-screen-3xl">
+                    <h2 class="text-18.7px leading-20.57px font-extralight md:text-27px md:leading-29.7px lg:text-28.5px lg:leading-31.35px xl:text-30px xl:leading-33px">VS Code for</h2>
+                    <div class="w-full flex flex-wrap gap-y-10px justify-center mt-40px md:mt-31.5px lg:w-950px lg:mt-33.250px xl:mt-35px">
+                        <!-- JavaScript -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/javascript.svg" alt="JavaScript" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">Javascript</p>
+                            </div>
+                        </div>
+                        <!-- Python -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/python.svg" alt="Python" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">Python</p>
+                            </div>
+                        </div>
+                        <!-- Java -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/java.svg" alt="Java" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">Java</p>
+                            </div>
+                        </div>
+                        <!-- Markdown -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/markdown.svg" alt="Markdown" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">Markdown</p>
+                            </div>
+                        </div>
+                        <!-- TypeScript -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/typescript.svg" alt="TypeScript" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">TypeScript</p>
+                            </div>
+                        </div>
+                        <!-- C/C++ -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/c++.svg" alt="C/C++" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">C/C++</p>
+                            </div>
+                        </div>
+                        <!-- JSON -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/json.svg" alt="JSON" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">JSON</p>
+                            </div>
+                        </div>
+                        <!-- Powershell -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/powershell.svg" alt="Powershell" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">Powershell</p>
+                            </div>
+                        </div>
+                        <!-- HTML/CSS -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/html-css.svg" alt="HTML/CSS" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">HTML/CSS</p>
+                            </div>
+                        </div>
+                        <!-- C# -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/c-sharp.svg" alt="C#" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">C#</p>
+                            </div>
+                        </div>
+                        <!-- PHP -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/php.svg" alt="PHP" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">PHP</p>
+                            </div>
+                        </div>
+                        <!-- YAML -->
+                        <div class="w-1/2 h-34.375px flex justify-center px-15px md:w-1/4 md:h-36px lg:w-158.32px lg:h-38px xl:h-40px">
+                            <div class="w-full h-full flex items-center">
+                                <img src="./Assets/yaml.svg" alt="YAML" class="w-30px">
+                                <p class="text-15.3px font-normal leading-30px md:text-16.2px lg:text-17.1px xl:text-18px">YAML</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-15.3px leading-34px font-normal mt-10px md:text-16.2px md:leading-36px lg:text-17.1px lg:leading-38px xl:text-18px xl:leading-40px"><a href="#" target="_blank" class="text-blue-txt-2 hover:underline underline-offset-1.5px">and many more languages on the Marketplace...</a></p>
+                    <button type="button" class="mt-50px flex justify-center items-center w-220.95px h-58.5625px text-20px font-semibold rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Get Started Now</button>
+                </div>
+            </section>
+
+            <!-- Section 11 -->
+            <section class="w-full h-auto mx-auto">
+                <!-- Container -->
+                <div class="w-full h-auto mx-auto flex flex-wrap justify-center py-51px md:py-54px md:w-600px md:gap-x-55px lg:w-full lg:py-57px xl:py-60px 3xl:max-w-screen-3xl">
+                    <!-- Windows -->
+                    <div class="w-240px flex flex-col items-center">
+                        <div class="flex justify-center">
+                            <img src="./Assets/windows-logo.png" alt="Windows" class="w-100px">
+                        </div>
+                        <button type="button" class="w-full h-62.91px flex flex-col justify-center items-center mt-20px text-white bg-blue-vs cursor-pointer transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs md:h-65.31px lg:h-67.83px xl:h-70.35px">
+                            <div class="flex justify-center items-center text-15.3px font-semibold md:text-16.2px lg:text-17.1px xl:text-18px">
+                                <img src="./Assets/download-icon-2.svg" alt="download-icon" class="h-18px mr-15px">Windows
+                            </div>
+                            <span class="text-10.2px font-medium mt-6.375px md:text-10.8px md:mt-6.750px lg:text-11.4px lg:mt-7.125px xl:text-12px xl:mt-7.5px">
+                                Windows 8, 10, 11
+                            </span>
+                        </button>
+                        <table class="mt-21px">
+                            <tbody>
+                                <tr class="h-22.85px leading-22.85px">
+                                    <td class="w-123.98px text-center p-0"><strong class="text-16px font-semibold">User Installer</strong></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x64</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x86</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm64</button></td>
+                                </tr>
+                                <tr class="h-22.85px leading-22.85px">
+                                    <td class="w-123.98px text-center p-0"><strong class="text-16px font-semibold">System Installer</strong></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x64</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x86</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm64</button></td>
+                                </tr>
+                                <tr class="h-22.85px leading-22.85px">
+                                    <td class="w-123.98px text-center p-0"><strong class="text-16px font-semibold">.zip</strong></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x64</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x86</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm64</button></td>
+                                </tr>
+                                <tr class="h-48px leading-22.85px">
+                                    <td class="w-123.98px text-center p-0"><strong class="text-16px font-semibold">CLI</strong></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x64</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x86</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm64</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Linux -->
+                    <div class="w-298.388px flex flex-col items-center">
+                        <div class="flex justify-center">
+                            <img src="./Assets/linux-logo.png" alt="Linux" class="h-100px">
+                        </div>
+                        <div class="w-full flex justify-between mt-20px">
+                            <button type="button" class="w-147px h-62.91px flex flex-col justify-center items-center text-white bg-blue-vs cursor-pointer transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs md:h-65.31px lg:h-67.83px xl:h-70.35px">
+                                <div class="flex justify-center items-center text-15.3px font-semibold md:text-16.2px lg:text-17.1px xl:text-18px">
+                                    <img src="./Assets/download-icon-2.svg" alt="download-icon" class="h-18px mr-15px">.deb
+                                </div>
+                                <span class="text-10.2px font-medium mt-6.375px md:text-10.8px md:mt-6.750px lg:text-11.4px lg:mt-7.125px xl:text-12px xl:mt-7.5px">
+                                    Debian, Ubuntu
+                                </span>
+                            </button>
+                            <button type="button" class="w-147px h-62.91px flex flex-col justify-center items-center text-white bg-blue-vs cursor-pointer transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs md:h-65.31px lg:h-67.83px xl:h-70.35px">
+                                <div class="flex justify-center items-center text-15.3px font-semibold md:text-16.2px lg:text-17.1px xl:text-18px">
+                                    <img src="./Assets/download-icon-2.svg" alt="download-icon" class="h-18px mr-15px">.rpm
+                                </div>
+                                <span class="text-10.2px font-medium mt-6.375px md:text-10.8px md:mt-6.750px lg:text-11.4px lg:mt-7.125px xl:text-12px xl:mt-7.5px">
+                                    Red Hat, Fedora, SUSE
+                                </span>
+                            </button>
+                        </div>
+                        <table class="mt-21px">
+                            <tbody>
+                                <tr class="h-22.85px leading-22.85px">
+                                    <td class="w-47.53px text-center p-0"><strong class="text-16px font-semibold">.deb</strong></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x64</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm32</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm64</button></td>
+                                </tr>
+                                <tr class="h-22.85px leading-22.85px">
+                                    <td class="w-47.53px text-center p-0"><strong class="text-16px font-semibold">.rpm</strong></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x64</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm32</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm64</button></td>
+                                </tr>
+                                <tr class="h-22.85px leading-22.85px">
+                                    <td class="w-47.53px text-center p-0"><strong class="text-16px font-semibold">.tar.gz</strong></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x64</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm32</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm64</button></td>
+                                </tr>
+                                <tr class="h-22.85px leading-22.85px">
+                                    <td class="w-47.53px text-center p-0"><strong class="text-16px font-semibold">Snap</strong></td>
+                                    <td colspan="2" class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Snap Store</button></td>
+                                </tr>
+                                <tr class="h-48px leading-22.85px">
+                                    <td class="w-47.53px text-center p-0"><strong class="text-16px font-semibold">CLI</strong></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">x64</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm32</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Arm64</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Mac -->
+                    <div class="w-240px flex flex-col items-center">
+                        <div class="flex justify-center">
+                            <img src="./Assets/apple-logo.svg" alt="Mac" class="h-100px">
+                        </div>
+                        <button type="button" class="w-full h-62.91px flex flex-col justify-center items-center mt-20px text-white bg-blue-vs cursor-pointer transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs md:h-65.31px lg:h-67.83px xl:h-70.35px">
+                            <div class="flex justify-center items-center text-15.3px font-semibold md:text-16.2px lg:text-17.1px xl:text-18px">
+                                <img src="./Assets/download-icon-2.svg" alt="download-icon" class="h-18px mr-15px">Mac
+                            </div>
+                            <span class="text-10.2px font-medium mt-6.375px md:text-10.8px md:mt-6.750px lg:text-11.4px lg:mt-7.125px xl:text-12px xl:mt-7.5px">
+                                macOS 10.11+
+                            </span>
+                        </button>
+                        <table class="mt-21px">
+                            <tbody>
+                                <tr class="h-22.85px leading-22.85px">
+                                    <td class="w-25.11px text-center p-0"><strong class="text-16px font-semibold">.zip</strong></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Intel Chip</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Apple silicon</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Universal</button></td>
+                                </tr>
+                                <tr class="h-48px leading-22.85px">
+                                    <td class="w-25.11px text-center p-0"><strong class="text-16px font-semibold">CLI</strong></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Intel Chip</button></td>
+                                    <td class="py-0 px-2px"><button type="button" class="text-12px font-normal px-3px leading-17.14px rounded-2px cursor-pointer text-white bg-blue-vs transiton-all duration-75 ease-in-out hover:bg-blue-hvr-vs">Apple silicon</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 12 -->
+            <section class="w-full h-auto mx-auto bg-off-white-bg">
+                <!-- Container -->
+                <div class="w-full h-auto mx-auto pt-54px pb-56.75px px-27.75px md:pt-56px md:pb-59.5px md:px-28.5px lg:pt-58px lg:pb-62.25px lg:px-29.25px xl:pt-40px xl:pb-45px xl:px-30px 3xl:max-w-screen-3xl">
+                    <div class="w-full flex flex-col items-center gap-98px md:gap-102px lg:flex-row lg:items-start lg:justify-center lg:gap-30px">
+                        <div class="text-center px-19% lg:w-455px lg:px-86.450px xl:w-555px xl:px-111px">
+                            <h3 class="text-17.85px leading-19.635px font-semibold md:text-18.9px md:leading-20.79px lg:text-19.95px lg:leading-21.945px xl:text-21px xl:leading-23.1px">Want new features sooner?</h3>
+                            <p class="text-15.3px leading-34px font-normal mt-4.250px md:text-16.2px md:leading-36px md:mt-4.5px lg:text-17.1px lg:leading-38px lg:mt-4.750px xl:text-18px xl:leading-40px xl:mt-5px">Get the <a href="#" target="_blank" class="text-blue-txt-2 hover:underline underline-offset-1.5px">Insiders build</a> instead.</p>
+                        </div>
+                        <div class="text-center px-19% lg:w-455px lg:px-86.450px xl:w-555px xl:px-111px">
+                            <h3 class="text-17.85px leading-19.635px font-semibold md:text-18.9px md:leading-20.79px lg:text-19.95px lg:leading-21.945px xl:text-21px xl:leading-23.1px">Use <a href="#" target="_blank" class="text-blue-txt-2 hover:underline underline-offset-1.5px">vscode.dev</a> for quick edits online!</h3>
+                            <p class="text-15.3px leading-34px font-normal mt-4.250px md:text-16.2px md:leading-36px md:mt-4.5px lg:text-17.1px lg:leading-38px lg:mt-4.750px xl:text-18px xl:leading-40px xl:mt-5px">GitHub, Azure Repos, and local files.</p>
+                        </div>
+                    </div>
+                    <div class="text-center mx-auto px-19% mt-98px md:mt-102px lg:w-940px lg:px-178.600px lg:mt-106px xl:w-1140px xl:px-228px xl:mt-70px">
+                        <h3 class="text-12.75px leading-14.025px font-semibold md:text-13.5px md:leading-14.85px lg:text-14.25px lg:leading-15.675px xl:text-15px xl:leading-16.5px">License and Privacy Terms</h3>
+                        <p class="text-11.9px leading-34px font-normal mt-10px md:text-12.6px md:leading-36px lg:text-13.3px lg:leading-38px xl:text-14px xl:leading-40px">By downloading and using Visual Studio Code, you agree to the <a href="#" target="_blank" class="text-blue-txt-2 hover:underline">license terms</a> and <a href="#" target="_blank" class="text-blue-txt-2 hover:underline">privacy statement</a>. VS Code automatically sends telemetry data and crash dumps to help us improve the product. If you would prefer not to have this data sent please go see <a href="#" target="_blank" class="text-blue-txt-2 hover:underline">How to Disable Crash Reporting</a> to learn how to disable it.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Main ends here -->
+
+        <!-- Footer starts here -->
+        <footer class="w-full h-auto mx-auto">
+            <!-- Section 13 -->
+            <section class="w-full h-auto mx-auto bg-gray-footer">
+                <!-- Container -->
+                <div class="w-full mx-auto flex flex-col pt-30px pb-55px gap-5px text-white sm:pb-30px lg:w-970px lg:flex-row lg:justify-between lg:gap-0 lg:pb-44px xl:w-1170px 3xl:max-w-screen-3xl xl:pb-30px">
+                    <!-- Left side -->
+                    <div class="w-full h-44px px-15px lg:h-auto xl:mt-5px">
+                        <ul class="flex items-center gap-24px ml-24px md:ml-0">
+                            <li class="hidden text-14px leading-20px md:block">Hello from Seattle.</li>
+                            <li class="text-14px leading-20px cursor-pointer transiton-all duration-75 ease-in-out hover:text-footer-purple-txt">Follow @code</li>
+                            <li class="flex items-center gap-4px">
+                                <div class="w-50px h-20px flex items-center justify-center gap-5px rounded-3px transiton-all duration-0 ease-in-out cursor-pointer text-gray-footer bg-white hover:bg-white-hvr">
+                                    <i class="fa-brands fa-github text-14px leading-20px mt-1.5px"></i>
+                                    <small class="font-helvetica-neue text-11px font-bold leading-20px">Star</small>
+                                </div>
+                                <div class="w-50.36px h-20px flex items-center justify-center rounded-3px relative transiton-all duration-0 ease-in-out cursor-pointer text-gray-footer bg-white hover:text-footer-blue-txt">
+                                    <div class="w-5px h-5px rotate-45 absolute -left-2px bg-white"></div>
+                                    <small class="font-helvetica-neue text-11px font-bold leading-20px">146,918</small>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Right side -->
+                    <div class="w-full flex flex-col items-start px-15px gap-10px sm:flex-row sm:gap-0 lg:flex-col lg:items-end lg:gap-10px xl:flex-row xl:items-start xl:justify-end xl:gap-0">
+                        <ul class="flex items-center text-12px leading-17.14px font-normal gap-23px">
+                            <li class="cursor-pointer transiton-all duration-75 ease-in-out hover:text-footer-purple-txt">Support</li>
+                            <li class="cursor-pointer transiton-all duration-75 ease-in-out hover:text-footer-purple-txt">Privacy</li>
+                            <li class="cursor-pointer transiton-all duration-75 ease-in-out hover:text-footer-purple-txt">Terms of Use</li>
+                            <li class="cursor-pointer transiton-all duration-75 ease-in-out hover:text-footer-purple-txt">License</li>
+                        </ul>
+                        <div class="flex flex-col justify-center gap-2px sm:ml-32px lg:ml-0 xl:ml-32px">
+                            <img src="./Assets/microsoft-logo.png" alt="Microsoft" class="w-93.55px cursor-pointer">
+                            <small class="text-12px leading-17.14px font-normal">© 2023 Microsoft</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+        <!-- Footer ends here -->
+    </div>
+</body>
+</html>
